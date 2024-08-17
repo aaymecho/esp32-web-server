@@ -1,24 +1,48 @@
-# Logs
-logs
+# PlatformIO specific files
+/.pio
+/.vscode
+/.platformio
+
+# VSCode files
+.vscode/
+
+# CLion files
+.idea/
+cmake-build-*/
+
+# JetBrains project files
+/.idea
+
+# Other IDEs and editors
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.temp
+*.DS_Store
+Thumbs.db
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+*.md~
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# MacOS specific files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# Build files
+*.elf
+*.bin
+*.hex
+*.map
+*.d
+*.o
+
+# Python specific
+__pycache__/
+*.py[cod]
+*.so
+.env
+*.venv
+pip-log.txt
+
+# SCons specific
+.sconsign.dblite
