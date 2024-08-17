@@ -46,3 +46,7 @@ pip-log.txt
 
 # SCons specific
 .sconsign.dblite
+
+# Wifi Credentials
+src/config.h
+
