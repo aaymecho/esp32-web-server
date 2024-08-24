@@ -1,22 +1,20 @@
 import './index.css';
 import { useState, useEffect } from 'react';
 
-const apiUrl = import.meta.env.ESP32_API;
-
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function App() {
   const [led4State, setLed4State] = useState<boolean>(false);
   const [led5State, setLed5State] = useState<boolean>(false);
 
-  // Fetch the initial state of the LEDs
   useEffect(() => {
     const fetchInitialStates = async () => {
       try {
-        const response4 = await fetch('http://192.168.1.29/led/4/status');
+        const response4 = await fetch(`${BASE_URL}/led/4/status`);
         const state4 = await response4.text();
         setLed4State(state4.trim() === 'ON');
 
-        const response5 = await fetch('http://192.168.1.29/led/5/status');
+        const response5 = await fetch(`${BASE_URL}/led/5/status`);
         const state5 = await response5.text();
         setLed5State(state5.trim() === 'ON');
       } catch (error) {
@@ -29,7 +27,7 @@ function App() {
 
   const toggleLED = async (led: number, currentState: boolean) => {
     const newState = !currentState;
-    const url = `http://192.168.1.29/led/${led}/${newState ? 'on' : 'off'}`;
+    const url = `${BASE_URL}/led/${led}/${newState ? 'on' : 'off'}`;
 
     try {
       const response = await fetch(url);
